@@ -1,0 +1,328 @@
+
+<!-- ============================= HTML ======================================= -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- css link --> 
+    <link rel="stylesheet" type="text/css" href="details.css" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title> Resume Details </title>
+  </head>
+  
+  <!--====================================== ==========BODY=========== ================================================  -->
+<body>
+<div id="bgimg">
+</div>  
+    <!------------------------- Nav Bar ------------------------------>
+  <nav class="navbar navbar-expand-sm navbar-dark ">
+        <div class="container">
+             <a class="navbar-brand" href="#"> CV DEVELOPER </a>
+   
+             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                     aria-expanded="false" aria-label="Toggle navigation"></button>
+    
+             <div class="collapse navbar-collapse" id="collapsibleNavId">
+                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="resume-home.html"> Resume </a>
+                        </li>
+                
+                        <li class="nav-item active">
+                            <a class="nav-link" href="details.html">Details</a>
+                        </li>
+
+                        <li class="nav-item">
+                                <a class="nav-link" href="#">Log Out</a>
+                        </li>
+           
+                  </ul>
+             </div>
+        </div>     
+ </nav>
+
+ <form >     
+<!-------------------------------------------- personal info starts ----------------------------------- -->
+    <div id="card1">
+        <!-- left-box -->
+        <div class=" left-box1">
+            <div class="personal">
+                <img src="img/personal_info.svg" >
+            </div>
+            <div class="container">
+                <h3> personla Info </h3> 
+                <p style="text-justify: auto;"> 
+                    This section is about personal info 
+                    this section is is helpful for contacting you fill the info correctly 
+                    first name,last name,email id,and other fields has to be compulsory filled.
+                </p> 
+            </div>
+            
+        </div>
+        <!-- right-box -->
+        <div class=" right-box1">
+            
+                    <div class=" form-group heading">
+                        <h2>Personal Info </h2>
+                    </div>
+
+                    <div class="form-group">
+                            <div class="form-row">
+
+                                    <div class="col ">
+                                          <label for="text">First Name</label>
+                                          <input type="text" class="form-control" placeholder="First name" name="firstname" required >
+                                          
+                                    </div>
+                                  
+                                    <div class="col  ">
+                                        <label for="text">Last Name</label>
+                                        <input type="text" class="form-control" placeholder="Last name" name="last_name" required >
+                                        
+                                    </div>
+        
+                            </div>
+                                
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                            <div class="form-row">
+
+                                    <div class="col col-lg-5 col-md-5  ">
+                                          <label for="date">Date Of Birth</label>
+                                          <input type="date" class="form-control " name="dob"     >
+                                           
+                                    </div>
+                            </div>
+                                
+                    </div> 
+
+                    <div class="form-group  ">
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="#123 Main Street" name="address"  required >
+                           
+                    </div>
+         
+
+                    <div class="form-group">
+                            <div class="form-row">
+
+                                    <div class="col ">
+                                          <label >Email</label>
+                                          <input type="email" class="form-control" placeholder="Email" name="email" required  >
+                                           
+                                    </div>
+                                  
+                                    <div class="col">
+                                        <label >Phone</label>
+                                        <input type="text" class="form-control" placeholder="+91" name="phone" required  >
+                                    </div>
+                            </div>                                
+                    </div>
+        
+        </div>
+    </div>
+<!-- ----------------------------------------- persnal ends here---------------------------------->
+
+<!-- ======================================================================================================= -->
+
+<!-------------------------------------------- Education info starts ------------------------------->
+<div id="card2">
+        <!-- left-box -->
+        <div class=" left-box2">
+            <div class="education">
+                <img src="img/edu_info.svg">
+            </div>
+            <div class="container">
+                <h3> Education Info </h3> 
+                <p style="text-justify: auto;"> 
+                    This section is about educaational deatils 
+                    the edcuation deatils has to filled from your school to the current studying semsters
+                    fill the perscentage obtanied by for school and pre-university 
+                    for enginering enter the branch use short forms like CSE,ISE for filling bracnh
+                    for engeineering fill the agrigate maks.
+                </p> 
+            </div>
+            
+        </div>
+        <!-- right-box -->
+        <div class=" right-box2">
+           
+                    <div class=" form-group heading">
+                        <h2>Education Info </h2>
+                    </div>
+
+                    <div class="form-group from-row  <?php echo (!empty($school_name_err)) ? 'has-error' : ''; ?>" >
+                            <label for="text">School Name</label>
+                            <input type="text" class="form-control" placeholder="Schoool name" required name=school_name value="<?php echo $school_name; ?>"   >
+                            <small > 10th School Name </small>
+                            <span class="help-block"><?php echo $school_name_err;?></span>
+                    </div>
+                          
+                                
+                    <div class="form-row">
+                            <div class="form-group col">
+                                <label > Result : </label>
+                                <input type="number" class="form-control col-4"  placeholder="Obtained "  name="school_marks"  value="<?php echo $school_marks; ?>"   >
+                                <small > Percentage Obtained in 10th exam </small>
+                            </div>          
+                    </div>  
+                    
+                    <div class="form-group from-row">
+                            <label for="text"> College Name</label>
+                            <input type="text" class="form-control" placeholder="College Name" name="college_name" required value="<?php echo $college_name; ?>"    >
+                            <small > 12th / PUC College Name </small>
+                    </div>
+
+                    <div class="form-row">
+                            <div class="form-group col">
+                                <label > Result : </label>
+                                <input type="number" class="form-control col-4"  placeholder="Obtained " name="college_marks" value="<?php echo $college_marks; ?>"   >
+                                <small > Percentage Obtained in 12th / 2nd PUC exam  </small>
+                            </div>          
+                    </div> 
+                    
+                    <div class="form-group from-row <?php echo (!empty($eng_college_name_err)) ? 'has-error' : ''; ?> ">
+                            <label >Engineering College Name</label>
+                            <input type="text" class="form-control" placeholder="College name" name="eng_college_name" required value="<?php echo $eng_college_name; ?>" >  
+                            <small > Currently Studying Enginerring College Name </small>
+                            <span class="help-block"><?php echo $eng_college_name_err;?></span>
+                    </div>
+                    
+                    
+
+                    <div class="form-group from-row">
+                            <label >Engineering branch Name</label>
+                            <input type="text" class="form-control" placeholder="College name" name="eng_branch" required value="<?php echo $eng_branch; ?>"   >
+                            <small >  Enginerring branch Name </small>
+                    </div>
+                   
+                    <div class="form-row">
+                            <div class="form-group col">
+                                <label > Result : </label>
+                                <input type="number" class="form-control col-4"  placeholder="Obtained " name="eng_marks" value="<?php echo $eng_marks; ?>"   >
+                                <small > Percentage Obtained for aggrigate of the prvious semesters </small>
+                            </div>          
+                    </div>     
+             
+         </div>
+    </div>
+<!-- -------------------------------------- education ends here---------------------------------->
+
+<!-- ============================================================================================================== -->
+
+<!------------------------------------------Skills info starts ----------------------------------- -->
+<div id="card3">
+        <!-- left-box -->
+        <div class=" left-box3">
+            <div class="skill">
+                <img src="img/skill_info.svg">
+            </div>
+            <div class="container">
+                <h3> Skill Info </h3> 
+                <p style="text-justify: auto;"> 
+                This section caontains the field to fill the skills
+                fill your best skills,know your streenths and fill the skills that u have obtained
+                skill name is compulsory,also give a rating to your skill level give a number from 1-10 on the scale 1 being the beginner and 10 being expert. 
+                </p> 
+            </div>
+            
+        </div>
+        <!-- right-box -->
+        <div class=" right-box3">
+            
+                    <div class=" form-group heading">
+                        <h2>Skill Info </h2>
+                        <small> Enter the 3 top skills </small>
+                        <small> give the number between 1 - 10 according to the skills level </small>
+                    </div>
+
+                    <div class="form-group">
+                            <div class="form-row">
+
+                                    <div class="col-12 <?php echo (!empty($skill_name_err)) ? 'has-error' : ''; ?>">
+                                          <label for="text">Skill Name</label>
+                                          <input type="text" class="form-control" placeholder="Skill Name" required name="skill_name" value="<?php echo $skill_name; ?>" >
+                                          <span class="help-block"><?php echo $skill_name_err;?></span>
+                                    </div>
+                                   
+                                    <div class="col-6">
+                                          <label for="text">Skill level </label>
+                                          <input type="number" class="form-control" placeholder="Skill level" name="skill_level" value="<?php echo $skill_level; ?>" >
+                                          
+                                    </div>
+                            </div>      
+                    </div>
+        </div>
+</div>
+<!-- -------------------------------------- Skills  info ends here---------------------------------->
+
+
+<!-- ======================================================================================================= -->
+
+<!-------------------------------------------- projects info starts -------------------------------->
+<div id="card4">
+        <!-- left-box -->
+        <div class=" left-box4">
+            <div class="project">
+                <img src="img/project_info.svg">
+            </div>
+            <div class="container">
+                <h3> Projects Info </h3> 
+                <p style="text-justify: auto;"> 
+                This filed conatins the forms to showcase your projects
+                Enter the name of the project you have done and also description about it 
+                makesure you convey the project aim in short and sweet.
+                </p> 
+            </div>
+            
+        </div>
+        <!-- right-box -->
+        <div class=" right-box4">
+                    <div class=" form-group heading">
+                        <h2>Projects Info </h2>
+                    </div>
+
+                    <div class="form-group">
+                            <div class="form-row">
+
+                                    <div class=" form-group col-12 <?php echo (!empty($project_title_err)) ? 'has-error' : ''; ?>">
+                                          <label for="text">Project Name</label>
+                                          <input type="text" class="form-control" placeholder="project title" name="project_title" required value="<?php echo $project_title; ?>" >
+                                          <span class="help-block"><?php echo $project_title_err;?></span>
+                                    </div>
+                                  
+                                    <div class="form-group col">
+                                        <label for="exampleFormControlTextarea1">Example textarea</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Give a descrition about the project...." rows="7" name="project_desc" value="<?php echo $project_desc; ?>" ></textarea>
+                                    </div>
+                            </div>      
+                    </div>  
+
+            <input class="btn btn-outline-success btn-block mt-5 col-6 ml-auto" id="sub" type="submit" value="submit" >   
+        </div>
+    </div>
+<!-- -------------------------------------- peojects ends here---------------------------------->
+
+<!-- ======================================================================================================== -->
+
+
+</form>
+<!-- ========================================================================================================== -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
